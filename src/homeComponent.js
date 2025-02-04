@@ -52,21 +52,27 @@ export const WelcomeMessage = styled.div`
   transition: opacity 0.6s ease, margin-top 0.6s ease;
   z-index: 2;
   position: absolute;
-  top: ${({ firstSubmit }) => (firstSubmit ? '100px' : '150px')};
+  top: ${({ firstSubmit }) => (firstSubmit ? '100px' : '150px')};  // Default value
+
   width: 100%;
   padding: 0 20px;  // Add padding for spacing
-  box-sizing: border-box; // Ensure padding is included in width calculation
+  box-sizing: border-box;
 
-  @media (max-width: 768px) {
-    font-size: 30px; // Reduce font size for smaller screens
-    top: ${({ firstSubmit }) => (firstSubmit ? '80px' : '120px')};  // Adjust top for smaller screens
+  @media (min-width: 768px) {
+    top: ${({ firstSubmit }) => (firstSubmit ? '150px' : '250px')};  // Increase spacing on larger screens
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 50px;  // Increase font size on very large screens
+    top: ${({ firstSubmit }) => (firstSubmit ? '200px' : '300px')};  // Further increase the gap
   }
 
   @media (max-width: 480px) {
-    font-size: 24px; // Further reduce font size on very small screens
-    top: ${({ firstSubmit }) => (firstSubmit ? '60px' : '100px')};  // Adjust further
+    font-size: 24px;  // For small mobile screens
+    top: ${({ firstSubmit }) => (firstSubmit ? '60px' : '100px')};
   }
 `;
+
 
 
 
