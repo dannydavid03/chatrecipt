@@ -3,7 +3,7 @@ import styled from "styled-components";
 // The search bar container (fixed at the bottom and visible after first submit)
 export const SearchContainer = styled.div`
   position: fixed;
-  bottom: ${({ firstSubmit }) => (firstSubmit ? "20px" : "70%")};
+  bottom: ${({ firstSubmit }) => (firstSubmit ? '20px' : '70%')};  // Adjust based on first submit state
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -14,10 +14,11 @@ export const SearchContainer = styled.div`
   align-items: center;
   opacity: 1;
   pointer-events: ${({ firstSubmit }) => (firstSubmit ? 'auto' : 'auto')};
-  z-index: 2;
-  transition: bottom 0.6s ease;  // Smooth transition for position
-  height: ${({ firstSubmit }) => (firstSubmit ? "50px" : "60px")};  // Adjust height of the search bar
+  z-index: 10;  // Make sure the search bar stays on top
+  transition: bottom 0.6s ease;
+  height: ${({ firstSubmit }) => (firstSubmit ? '50px' : '60px')};  // Make search bar smaller once submitted
 `;
+
 
 
 
@@ -50,9 +51,11 @@ export const WelcomeMessage = styled.div`
   opacity: ${({ firstSubmit }) => (firstSubmit ? 0 : 1)};  // Fade out after first submit
   transition: opacity 0.6s ease, margin-top 0.6s ease;  // Smooth transitions for opacity and margin
   z-index: 2;
-  position: relative;
-  margin-top: ${({ firstSubmit }) => (firstSubmit ? "20px" : "120px")};  // Increase margin-top after submit to ensure visibility above search bar
+  position: absolute;  // Position it absolutely to prevent overlap
+  top: ${({ firstSubmit }) => (firstSubmit ? '100px' : '150px')};  // Move message down based on search bar visibility
+  width: 100%;  // Ensure it takes up the full width to center the text
 `;
+
 
 
 
@@ -69,8 +72,9 @@ export const Container = styled.div`
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding-top: 60px;  // Add space at the top for the navbar
+  padding-top: ${({ firstSubmit }) => (firstSubmit ? '120px' : '150px')};  // Adjust padding-top dynamically based on search bar visibility
 `;
+
 
 
 export const Navbar = styled.div`
