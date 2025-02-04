@@ -1,7 +1,7 @@
 // backend/api/signup.js
 
 import { connectdb } from '../utils/db.js'; // Database connection utility
-import User from '../models/userModel.js';   // User model
+import User from '../model/userModel.js';   // User model
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
