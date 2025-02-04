@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import { connectdb } from '../utils/db.js'; // Ensure correct path to connectdb
+import { connectdb } from '../utils/db.js';  // Ensure correct path to connectdb
 import userRoutes from "../routes/userRoutes.js";
 import promptRoutes from "../routes/promptRoutes.js";
 
@@ -10,7 +10,11 @@ dotenv.config();
 const app = express();
 
 // Define allowed origins (local dev and production)
-const allowedOrigins = ['http://localhost:5173', 'https://dannydavid03.github.io'];
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://dannydavid03.github.io',
+  'https://chatercipt.vercel.app',  // Add your production frontend URL here
+];
 
 // Middleware setup
 app.use(express.json()); // Only need this once
@@ -31,9 +35,8 @@ app.use(cors({
 app.use("/signup", userRoutes);
 app.use("/home", promptRoutes);
 
-// Server setup
-const PORT = process.env.PORT || 8001;
-app.listen(PORT, () => {
-    connectdb(); // Make sure this function connects to your DB
-    console.log(`Server is running on port ${PORT}`);
-});
+// Connect to DB only once (assuming the database connection function works correctly)
+connectdb();
+
+// Export the app for Vercel serverless functions
+export default app;
