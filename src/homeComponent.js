@@ -48,13 +48,26 @@ export const WelcomeMessage = styled.div`
   font-size: 40px;
   font-weight: bold;
   text-align: center;
-  opacity: ${({ firstSubmit }) => (firstSubmit ? 0 : 1)};  // Fade out after first submit
-  transition: opacity 0.6s ease, margin-top 0.6s ease;  // Smooth transitions for opacity and margin
+  opacity: ${({ firstSubmit }) => (firstSubmit ? 0 : 1)};
+  transition: opacity 0.6s ease, margin-top 0.6s ease;
   z-index: 2;
-  position: absolute;  // Position it absolutely to prevent overlap
-  top: ${({ firstSubmit }) => (firstSubmit ? '100px' : '150px')};  // Move message down based on search bar visibility
-  width: 100%;  // Ensure it takes up the full width to center the text
+  position: absolute;
+  top: ${({ firstSubmit }) => (firstSubmit ? '100px' : '150px')};
+  width: 100%;
+  padding: 0 20px;  // Add padding for spacing
+  box-sizing: border-box; // Ensure padding is included in width calculation
+
+  @media (max-width: 768px) {
+    font-size: 30px; // Reduce font size for smaller screens
+    top: ${({ firstSubmit }) => (firstSubmit ? '80px' : '120px')};  // Adjust top for smaller screens
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px; // Further reduce font size on very small screens
+    top: ${({ firstSubmit }) => (firstSubmit ? '60px' : '100px')};  // Adjust further
+  }
 `;
+
 
 
 
