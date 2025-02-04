@@ -6,8 +6,12 @@ export const Container = styled.div`
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
   overflow: hidden;
-  width: 900px;
+  width: 100%;
   min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
 `;
 
 export const SignUpContainer = styled.div`
@@ -126,7 +130,6 @@ export const OverlayPanel = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 40px;
   text-align: center;
   top: 0;
   height: 100%;
