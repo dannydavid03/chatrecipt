@@ -1,10 +1,10 @@
-// api/user.js
-import { connectdb } from '../utils/db.js'; // MongoDB connection utility
-import User from '../models/userModel.js';   // Import the User model
+// backend/api/signup.js
+
+import { connectdb } from '../utils/db.js'; // Database connection utility
+import User from '../models/userModel.js';   // User model
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-// The signup or login logic
 const signupOrLogin = async (req, res) => {
   const { email, password, name } = req.body;
 
@@ -56,14 +56,12 @@ const signupOrLogin = async (req, res) => {
   }
 };
 
-// Create the API endpoint that Vercel will handle
+// Export this function to handle the /signup route as a serverless function
 export default async (req, res) => {
-  // Establish the database connection
-  await connectdb();
+  await connectdb();  // Ensure DB is connected before handling the request
   
-  // Handle the request with signupOrLogin
   if (req.method === 'POST') {
-    signupOrLogin(req, res);
+    signupOrLogin(req, res);  // Handle POST request for signup/login
   } else {
     res.status(405).json({ success: false, message: 'Method Not Allowed' });
   }
