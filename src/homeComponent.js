@@ -52,19 +52,20 @@ export const WelcomeMessage = styled.div`
   transition: opacity 0.6s ease, margin-top 0.6s ease;
   z-index: 2;
   position: absolute;
-  top: ${({ firstSubmit }) => (firstSubmit ? '100px' : '200px')};  // Default value
-
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
 
+  // Dynamically adjust top based on firstSubmit state and screen size
+  top: ${({ firstSubmit }) => (firstSubmit ? 'calc(100px + 50px)' : 'calc(200px + 70px)')};  // Default value
+
   @media (min-width: 768px) {
-    top: ${({ firstSubmit }) => (firstSubmit ? '150px' : '300px')};  // Increase space from search bar for medium screens
+    top: ${({ firstSubmit }) => (firstSubmit ? 'calc(150px + 50px)' : 'calc(300px + 70px)')};  // More space for medium screens
   }
 
   @media (min-width: 1024px) {
     font-size: 50px;  // Larger font for big screens
-    top: ${({ firstSubmit }) => (firstSubmit ? '200px' : '350px')};  // More space from search bar on large screens
+    top: ${({ firstSubmit }) => (firstSubmit ? 'calc(200px + 70px)' : 'calc(350px + 90px)')};  // More space for large screens
   }
 
   @media (max-width: 480px) {
@@ -72,6 +73,7 @@ export const WelcomeMessage = styled.div`
     top: ${({ firstSubmit }) => (firstSubmit ? '60px' : '100px')};
   }
 `;
+
 
 
 
