@@ -37,7 +37,7 @@ const HomeComponent = ({ onLogout }) => {
 
       // Send the prompt to the backend API
       try {
-        const response = await fetch("http://localhost:8000/home", {
+        const response = await fetch("https://chatrecipt-backend.vercel.app/api/generateRecipe", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
