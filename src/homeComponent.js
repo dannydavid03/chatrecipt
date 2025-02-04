@@ -52,26 +52,27 @@ export const WelcomeMessage = styled.div`
   transition: opacity 0.6s ease, margin-top 0.6s ease;
   z-index: 2;
   position: absolute;
-  top: ${({ firstSubmit }) => (firstSubmit ? '100px' : '150px')};  // Default value
+  top: ${({ firstSubmit }) => (firstSubmit ? '100px' : '200px')};  // Default value
 
   width: 100%;
-  padding: 0 20px;  // Add padding for spacing
+  padding: 0 20px;
   box-sizing: border-box;
 
   @media (min-width: 768px) {
-    top: ${({ firstSubmit }) => (firstSubmit ? '150px' : '250px')};  // Increase spacing on larger screens
+    top: ${({ firstSubmit }) => (firstSubmit ? '150px' : '300px')};  // Increase space from search bar for medium screens
   }
 
   @media (min-width: 1024px) {
-    font-size: 50px;  // Increase font size on very large screens
-    top: ${({ firstSubmit }) => (firstSubmit ? '200px' : '300px')};  // Further increase the gap
+    font-size: 50px;  // Larger font for big screens
+    top: ${({ firstSubmit }) => (firstSubmit ? '200px' : '350px')};  // More space from search bar on large screens
   }
 
   @media (max-width: 480px) {
-    font-size: 24px;  // For small mobile screens
+    font-size: 24px;
     top: ${({ firstSubmit }) => (firstSubmit ? '60px' : '100px')};
   }
 `;
+
 
 
 
