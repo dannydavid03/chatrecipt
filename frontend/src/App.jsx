@@ -17,6 +17,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+      <Route
+      path="/"
+      element={isLoggedIn ? <Home onLogout={handleLogout} /> : <Navigate to="/login" />}
+      />
         <Route
           path="/home"
           element={isLoggedIn ? <Home onLogout={handleLogout} /> : <Navigate to="/login" />}
