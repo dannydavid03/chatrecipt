@@ -49,8 +49,9 @@ export const WelcomeMessage = styled.div`
   transition: opacity 0.6s ease, margin-top 0.6s ease;  // Smooth transitions for opacity and margin
   z-index: 2;
   position: relative;
-  margin-top: ${({ firstSubmit }) => (firstSubmit ? "20px" : "100px")};  // Adjust margin-top after submit to prevent page shift
+  margin-top: ${({ firstSubmit }) => (firstSubmit ? "20px" : "120px")};  // Increase margin-top after submit to ensure visibility above search bar
 `;
+
 
 
 export const Container = styled.div`
