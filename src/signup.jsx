@@ -23,7 +23,7 @@ function SignUp({ onLogin }) {  // Add onLogin prop
     }
 
     axios
-      .post("https://chatrecipt-backend.vercel.app/api/index", data) // Unified route for both login and signup
+      .post("https://chatrecipt.vercel.app/backend/api/user.js", data) // Unified route for both login and signup
       .then((result) => {
         console.log(result);
 
