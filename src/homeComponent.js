@@ -54,21 +54,22 @@ export const WelcomeMessage = styled.div`
 
 
 export const Container = styled.div`
-  background-color: #1f1f1f;  // Dark background color
+  background-color: #1f1f1f;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;  // Full viewport height
-  width: 100vw;   // Full viewport width
+  height: 100vh;
+  width: 100vw;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   flex-direction: column;
-  overflow: hidden;  // Prevent scrollbars
+  overflow: hidden;
   position: relative;
+  padding-top: 60px;  // Add space at the top for the navbar
 `;
 
-// Navbar at the top
+
 export const Navbar = styled.div`
   width: 100%;
   background-color: #333;
@@ -76,11 +77,13 @@ export const Navbar = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  position: absolute;
+  position: fixed;  // Change from absolute to fixed
   top: 0;
   left: 0;
-  z-index: 10;  // Ensure the navbar is always on top
+  z-index: 10;
+  box-sizing: border-box; // Add this to ensure padding does not overflow
 `;
+
 
 // Navbar title ("RecipesGPT")
 export const NavbarTitle = styled.h1`

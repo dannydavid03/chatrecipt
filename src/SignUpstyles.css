@@ -1,0 +1,9 @@
+/* index.css or App.css */
+
+body {
+    margin: 0;
+    overflow: hidden;  /* Prevent scrolling */
+    padding: 0;        /* Reset any default padding */
+    font-family: sans-serif;  /* Optional: Set a global font */
+  }
+  

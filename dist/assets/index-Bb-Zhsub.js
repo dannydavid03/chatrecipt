@@ -218,18 +218,19 @@ Please change the parent <Route path="${D}"> to <Route path="${D==="/"?"*":`${D}
   position: relative;
   margin-top: ${({firstSubmit:r})=>r?"20px":"100px"};  // Adjust margin-top after submit to prevent page shift
 `,_1=we.div`
-  background-color: #1f1f1f;  // Dark background color
+  background-color: #1f1f1f;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;  // Full viewport height
-  width: 100vw;   // Full viewport width
+  height: 100vh;
+  width: 100vw;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   flex-direction: column;
-  overflow: hidden;  // Prevent scrollbars
+  overflow: hidden;
   position: relative;
+  padding-top: 60px;  // Add space at the top for the navbar
 `,T1=we.div`
   width: 100%;
   background-color: #333;
@@ -237,10 +238,11 @@ Please change the parent <Route path="${D}"> to <Route path="${D==="/"?"*":`${D}
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  position: absolute;
+  position: fixed;  // Change from absolute to fixed
   top: 0;
   left: 0;
-  z-index: 10;  // Ensure the navbar is always on top
+  z-index: 10;
+  box-sizing: border-box; // Add this to ensure padding does not overflow
 `,N1=we.h1`
   color: white;
   font-size: 24px;
