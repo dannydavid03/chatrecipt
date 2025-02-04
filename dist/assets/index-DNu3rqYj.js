@@ -190,6 +190,7 @@ Please change the parent <Route path="${D}"> to <Route path="${D==="/"?"*":`${D}
   pointer-events: ${({firstSubmit:r})=>"auto"};
   z-index: 2;
   transition: bottom 0.6s ease;  // Smooth transition for position
+  height: ${({firstSubmit:r})=>r?"50px":"60px"};  // Adjust height of the search bar
 `,R1=we.div`
   position: relative;  // Ensure it doesn't overlap with the search container
   background-color: #2a2a2a;

@@ -16,7 +16,9 @@ export const SearchContainer = styled.div`
   pointer-events: ${({ firstSubmit }) => (firstSubmit ? 'auto' : 'auto')};
   z-index: 2;
   transition: bottom 0.6s ease;  // Smooth transition for position
+  height: ${({ firstSubmit }) => (firstSubmit ? "50px" : "60px")};  // Adjust height of the search bar
 `;
+
 
 
 // Chat container: Adjust height based on search bar visibility
