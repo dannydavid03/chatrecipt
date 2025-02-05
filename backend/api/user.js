@@ -56,10 +56,18 @@ const signupOrLogin = async (req, res) => {
   }
 };
 
-// Export this function to handle the /signup route as a serverless function
+// Handle OPTIONS request for CORS preflight
 export default async (req, res) => {
   await connectdb();  // Ensure DB is connected before handling the request
-  
+
+  // Handle CORS preflight (OPTIONS request)
+  if (req.method === 'OPTIONS') {
+    res.setHeader('Access-Control-Allow-Origin', 'https://www.danieldavid.me');  // Allow your frontend
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    return res.status(200).end();  // End the preflight request successfully
+  }
+
   if (req.method === 'POST') {
     signupOrLogin(req, res);  // Handle POST request for signup/login
   } else {
