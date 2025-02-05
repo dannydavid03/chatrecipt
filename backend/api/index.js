@@ -14,6 +14,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'https://dannydavid03.github.io',
   'https://chatercipt.vercel.app',
+  'https://www.danieldavid.me',
   'https://www.danieldavid.me', // Add your production frontend URL here
 ];
 
