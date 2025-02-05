@@ -1,5 +1,3 @@
-// backend/api/index.js
-
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -21,6 +19,8 @@ const allowedOrigins = [
 
 // Middleware setup
 app.use(express.json());
+
+// CORS configuration to handle preflight requests correctly
 app.use(cors({
   origin: (origin, callback) => {
     if (allowedOrigins.includes(origin) || !origin) {
@@ -29,7 +29,20 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));  // Reject the request
     }
   },
-  methods: ['GET', 'POST'],
+  methods: ['GET', 'POST', 'OPTIONS'], // Ensure OPTIONS is included
+  credentials: true,
+}));
+
+// Handle OPTIONS requests explicitly (preflight)
+app.options('*', cors({
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);  // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS'));  // Reject the request
+    }
+  },
+  methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
 }));
 
