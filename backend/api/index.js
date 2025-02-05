@@ -15,7 +15,7 @@ const allowedOrigins = [
   'https://dannydavid03.github.io',
   'https://chatercipt.vercel.app',
   'https://www.danieldavid.me',
-  'https://www.danieldavid.me', // Add your production frontend URL here
+  'https://danieldavid.me', // Add your production frontend URL here
 ];
 
 // Middleware setup
