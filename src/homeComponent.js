@@ -51,35 +51,27 @@ export const WelcomeMessage = styled.div`
   opacity: ${({ firstSubmit }) => (firstSubmit ? 0 : 1)};
   transition: opacity 0.6s ease, margin-top 0.6s ease;
   z-index: 2;
-  position: absolute;
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
 
-  // Dynamically adjust top based on firstSubmit state and screen size
-  top: ${({ firstSubmit }) => (firstSubmit ? 'calc(100px + 50px)' : 'calc(200px + 70px)')};  // Default value
+  // Remove absolute positioning and adjust top based on firstSubmit state
+  margin-top: ${({ firstSubmit }) => (firstSubmit ? '0' : '100px')};  // Adjust margin-top for spacing above SearchContainer
 
   @media (min-width: 768px) {
-    top: ${({ firstSubmit }) => (firstSubmit ? 'calc(150px + 50px)' : 'calc(300px + 70px)')};  // More space for medium screens
+    margin-top: ${({ firstSubmit }) => (firstSubmit ? '0' : '150px')};  // More space for medium screens
   }
 
   @media (min-width: 1024px) {
     font-size: 50px;  // Larger font for big screens
-    top: ${({ firstSubmit }) => (firstSubmit ? 'calc(200px + 70px)' : 'calc(350px + 90px)')};  // More space for large screens
+    margin-top: ${({ firstSubmit }) => (firstSubmit ? '0' : '200px')};  // More space for large screens
   }
 
   @media (max-width: 480px) {
     font-size: 24px;
-    top: ${({ firstSubmit }) => (firstSubmit ? '60px' : '100px')};
+    margin-top: ${({ firstSubmit }) => (firstSubmit ? '0' : '60px')};
   }
 `;
-
-
-
-
-
-
-
 
 export const Container = styled.div`
   background-color: #1f1f1f;
@@ -94,7 +86,7 @@ export const Container = styled.div`
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding-top: ${({ firstSubmit }) => (firstSubmit ? '120px' : '150px')};  // Adjust padding-top dynamically based on search bar visibility
+  padding-top: ${({ firstSubmit }) => (firstSubmit ? '120px' : '250px')};  // Adjust padding-top to ensure enough space for the welcome message and search bar
 `;
 
 

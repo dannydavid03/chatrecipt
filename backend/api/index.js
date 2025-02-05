@@ -15,7 +15,8 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:5173',
   'https://dannydavid03.github.io',
-  'https://chatercipt.vercel.app',  // Add your production frontend URL here
+  'https://chatercipt.vercel.app',
+  'https://danieldavid.me', // Add your production frontend URL here
 ];
 
 // Middleware setup
