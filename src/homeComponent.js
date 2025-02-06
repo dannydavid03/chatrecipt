@@ -54,6 +54,7 @@ export const Container = styled.div`
   flex-direction: column;
   overflow: hidden;
   position: relative;
+  padding-top: 20px;
 `;
 
 
