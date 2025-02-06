@@ -3,7 +3,7 @@ import styled from "styled-components";
 // The search bar container (fixed at the bottom and visible after first submit)
 export const SearchContainer = styled.div`
   position: fixed;
-  bottom: ${({ firstSubmit }) => (firstSubmit ? '20px' : '70%')};  // Adjust based on first submit state
+  bottom: ${({ firstSubmit }) => (firstSubmit ? '10px' : '70%')};  
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -13,18 +13,15 @@ export const SearchContainer = styled.div`
   justify-content: center;
   align-items: center;
   opacity: 1;
-  pointer-events: ${({ firstSubmit }) => (firstSubmit ? 'auto' : 'auto')};
-  z-index: 10;  // Make sure the search bar stays on top
+  pointer-events: auto;
+  z-index: 10;
   transition: bottom 0.6s ease;
-  height: ${({ firstSubmit }) => (firstSubmit ? '50px' : '60px')};  // Make search bar smaller once submitted
+  height: ${({ firstSubmit }) => (firstSubmit ? '40px' : '60px')};  
 `;
-
-
-
 
 // Chat container: Adjust height based on search bar visibility
 export const ChatContainer = styled.div`
-  position: relative;  // Ensure it doesn't overlap with the search container
+  position: relative;
   background-color: #2a2a2a;
   display: flex;
   flex-direction: column;
@@ -32,18 +29,16 @@ export const ChatContainer = styled.div`
   align-items: center;
   width: 80%;
   max-width: 600px;
-  height: ${({ firstSubmit }) => (firstSubmit ? "calc(100vh - 120px)" : "calc(100vh - 60px)")}; // Adjust height based on firstSubmit state
+  height: ${({ firstSubmit }) => (firstSubmit ? "calc(100vh - 100px)" : "calc(100vh - 60px)")}; 
   padding: 20px;
   border-radius: 12px;
   overflow-y: auto;
   opacity: ${({ firstSubmit }) => (firstSubmit ? 1 : 0)};
   transition: opacity 0.6s ease;
-  margin-top: 20px; // Ensure chat starts below the navbar
-  position: relative; // Keep it below the search bar
+  margin-top: 20px; 
 `;
 
-
-
+// Main container for layout
 export const Container = styled.div`
   background-color: #1f1f1f;
   display: flex;
@@ -57,43 +52,42 @@ export const Container = styled.div`
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding-top: ${({ firstSubmit }) => (firstSubmit ? '120px' : '250px')};  // Adjust padding-top to ensure enough space for the welcome message and search bar
+  padding-top: ${({ firstSubmit }) => (firstSubmit ? '80px' : '250px')};  
 `;
 
-
-
+// Navbar
 export const Navbar = styled.div`
   width: 100%;
   background-color: #333;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  position: fixed;  // Change from absolute to fixed
+  padding: 15px 20px;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
-  box-sizing: border-box; // Add this to ensure padding does not overflow
+  box-sizing: border-box;
+  height: 60px;  // Reduce navbar height to reclaim space
 `;
 
-
-// Navbar title ("RecipesGPT")
+// Navbar title
 export const NavbarTitle = styled.h1`
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
 `;
 
-// Navbar logout button
+// Logout button
 export const LogoutButton = styled.button`
   background-color: #ff4b2b;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
   cursor: pointer;
   
   &:hover {
@@ -105,44 +99,35 @@ export const LogoutButton = styled.button`
   }
 `;
 
-
-
-// The search bar container (now horizontal with the button)
-// The search bar container (now horizontal with the button)
-// The search bar container (now at the bottom and visible after first submit)
-
-// Chat container: Adjust height based on search bar visibility
-
-// Search input for ingredients (now smaller width to accommodate button)
+// Search input
 export const SearchInput = styled.input`
   background-color: #333;
   border: none;
   border-radius: 20px;
-  padding: 10px 20px;
-  width: 75%;  // Reduce the width to leave space for the button
-  font-size: 18px;  // Make search input text a bit bigger
+  padding: 8px 16px;
+  width: 70%;  
+  font-size: 16px;
   outline: none;
   color: #fff;
-  margin-bottom: 10px;
   
   &:focus {
     background-color: #444;
   }
 `;
 
-// Submit button with arrow icon
+// Search button
 export const SearchButton = styled.button`
   background-color: #007bff;
   border: none;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  padding: 12px 20px;
+  padding: 10px;
   border-radius: 50%;
   cursor: pointer;
-  width: 60px;
-  height: 60px;
-  margin-left: 10px; // Add space between input and button
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,12 +139,7 @@ export const SearchButton = styled.button`
   &:focus {
     outline: none;
   }
-  
-  &::before {
-    font-size: 28px;
-  }
 `;
-
 
 // Chat messages area
 export const ChatArea = styled.div`
@@ -170,34 +150,33 @@ export const ChatArea = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   overflow-y: auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;
 
-// Message container for AI and user messages
+// Message container
 export const MessageContainer = styled.div`
   display: flex;
   justify-content: ${({ userMessage }) => (userMessage ? "flex-end" : "flex-start")};
   width: 100%;
-  margin-bottom: 15px;
-  padding: 0 20px;
+  margin-bottom: 10px;
+  padding: 0 15px;
 `;
 
-// Message bubble for user messages
+// Message bubble
 export const MessageBubble = styled.div`
   background-color: ${({ userMessage }) => (userMessage ? "#007bff" : "#444")};
   color: ${({ userMessage }) => (userMessage ? "#fff" : "#ccc")};
-  border-radius: 20px;
-  padding: 12px 18px;
+  border-radius: 16px;
+  padding: 10px 15px;
   max-width: 70%;
   word-wrap: break-word;
   font-size: 14px;
-  line-height: 20px;
 `;
 
 // AI response
 export const AIResponse = styled.div`
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   margin: 10px 0;
   padding: 10px;

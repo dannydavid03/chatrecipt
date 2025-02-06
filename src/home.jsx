@@ -90,7 +90,7 @@ const HomeComponent = ({ onLogout }) => {
         <SearchInput
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Enter ingredients..."
+          placeholder="Enter ingredients To begin..."
         />
         <SearchButton onClick={handleSubmitIngredients}>
           {loading ? "..." : "→"}
