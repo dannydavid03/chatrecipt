@@ -183,14 +183,14 @@ Please change the parent <Route path="${D}"> to <Route path="${D==="/"?"*":`${D}
   width: 80%;
   max-width: 600px;
   text-align: center;
-  display: ${({firstSubmit:r})=>r?"none":"flex"}; // Hide after first submit
+  display: flex;
   justify-content: center;
   align-items: center;
-  opacity: ${({firstSubmit:r})=>r?"0":"1"};  // Fade out after first submit
-  pointer-events: ${({firstSubmit:r})=>r?"none":"auto"};  // Disable interaction
+  opacity: 1;
+  pointer-events: auto;
   z-index: 10;
-  transition: bottom 0.6s ease, opacity 0.6s ease;
-  height: ${({firstSubmit:r})=>r?"0px":"60px"};  // Hide height after submit
+  transition: bottom 0.6s ease;
+  height: ${({firstSubmit:r})=>r?"40px":"60px"};  
 `,R1=we.div`
   position: relative;
   background-color: #2a2a2a;
@@ -206,7 +206,7 @@ Please change the parent <Route path="${D}"> to <Route path="${D==="/"?"*":`${D}
   overflow-y: auto;
   opacity: ${({firstSubmit:r})=>r?1:0};
   transition: opacity 0.6s ease;
-  margin-top: 20px; 
+  margin-top: ${({firstSubmit:r})=>r?"20px":"200px"};  // Adjust margin-top here
 `,P1=we.div`
   background-color: #1f1f1f;
   display: flex;
@@ -220,7 +220,7 @@ Please change the parent <Route path="${D}"> to <Route path="${D==="/"?"*":`${D}
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding-top: ${({firstSubmit:r})=>r?"60px":"200px"};  // Reduced padding, adjusted based on search bar visibility
+  padding-top: ${({firstSubmit:r})=>r?"60px":"200px"};  // Reduced padding
 `,_1=we.div`
   width: 100%;
   background-color: #333;

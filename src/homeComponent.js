@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 // The search bar container (fixed at the bottom and visible after first submit)
-// The search bar container (fixed at the bottom and visible after first submit)
 export const SearchContainer = styled.div`
   position: fixed;
   bottom: ${({ firstSubmit }) => (firstSubmit ? '10px' : '70%')};  
@@ -10,17 +9,17 @@ export const SearchContainer = styled.div`
   width: 80%;
   max-width: 600px;
   text-align: center;
-  display: ${({ firstSubmit }) => (firstSubmit ? 'none' : 'flex')}; // Hide after first submit
+  display: flex;
   justify-content: center;
   align-items: center;
-  opacity: ${({ firstSubmit }) => (firstSubmit ? '0' : '1')};  // Fade out after first submit
-  pointer-events: ${({ firstSubmit }) => (firstSubmit ? 'none' : 'auto')};  // Disable interaction
+  opacity: 1;
+  pointer-events: auto;
   z-index: 10;
-  transition: bottom 0.6s ease, opacity 0.6s ease;
-  height: ${({ firstSubmit }) => (firstSubmit ? '0px' : '60px')};  // Hide height after submit
+  transition: bottom 0.6s ease;
+  height: ${({ firstSubmit }) => (firstSubmit ? '40px' : '60px')};  
 `;
 
-
+// Chat container: Adjust height based on search bar visibility
 // Chat container: Adjust height based on search bar visibility
 export const ChatContainer = styled.div`
   position: relative;
@@ -37,8 +36,9 @@ export const ChatContainer = styled.div`
   overflow-y: auto;
   opacity: ${({ firstSubmit }) => (firstSubmit ? 1 : 0)};
   transition: opacity 0.6s ease;
-  margin-top: 20px; 
+  margin-top: ${({ firstSubmit }) => (firstSubmit ? '20px' : '200px')};  // Adjust margin-top here
 `;
+
 
 // Main container for layout
 export const Container = styled.div`
@@ -54,9 +54,8 @@ export const Container = styled.div`
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding-top: ${({ firstSubmit }) => (firstSubmit ? '60px' : '200px')};  // Reduced padding, adjusted based on search bar visibility
+  padding-top: ${({ firstSubmit }) => (firstSubmit ? '60px' : '200px')};  // Reduced padding
 `;
-
 
 
 // Navbar
