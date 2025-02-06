@@ -29,7 +29,7 @@ export const ChatContainer = styled.div`
   align-items: center;
   width: 80%;
   max-width: 600px;
-  height: ${({ firstSubmit }) => (firstSubmit ? "calc(100vh - 100px)" : "calc(100vh - 60px)")}; 
+  height: 100vh;
   padding: 20px;
   border-radius: 12px;
   overflow-y: auto;
@@ -52,8 +52,9 @@ export const Container = styled.div`
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding-top: ${({ firstSubmit }) => (firstSubmit ? '80px' : '250px')};  
+  padding-top: ${({ firstSubmit }) => (firstSubmit ? '60px' : '200px')};  // Reduced padding
 `;
+
 
 // Navbar
 export const Navbar = styled.div`

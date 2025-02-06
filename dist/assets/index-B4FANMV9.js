@@ -200,7 +200,7 @@ Please change the parent <Route path="${D}"> to <Route path="${D==="/"?"*":`${D}
   align-items: center;
   width: 80%;
   max-width: 600px;
-  height: ${({firstSubmit:r})=>r?"calc(100vh - 100px)":"calc(100vh - 60px)"}; 
+  height: 100vh;
   padding: 20px;
   border-radius: 12px;
   overflow-y: auto;
@@ -220,7 +220,7 @@ Please change the parent <Route path="${D}"> to <Route path="${D==="/"?"*":`${D}
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding-top: ${({firstSubmit:r})=>r?"80px":"250px"};  
+  padding-top: ${({firstSubmit:r})=>r?"60px":"200px"};  // Reduced padding
 `,_1=we.div`
   width: 100%;
   background-color: #333;
