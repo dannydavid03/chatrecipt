@@ -220,7 +220,6 @@ Please change the parent <Route path="${D}"> to <Route path="${D==="/"?"*":`${D}
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding-top: ${({firstSubmit:r})=>r?"60px":"200px"};  // Reduced padding
 `,_1=we.div`
   width: 100%;
   background-color: #333;

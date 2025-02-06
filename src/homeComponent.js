@@ -54,7 +54,6 @@ export const Container = styled.div`
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding-top: ${({ firstSubmit }) => (firstSubmit ? '60px' : '200px')};  // Reduced padding
 `;
 
 
