@@ -42,36 +42,7 @@ export const ChatContainer = styled.div`
   position: relative; // Keep it below the search bar
 `;
 
-// Welcome message container
-export const WelcomeMessage = styled.div`
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-  opacity: ${({ firstSubmit }) => (firstSubmit ? 0 : 1)};
-  transition: opacity 0.6s ease, margin-top 0.6s ease;
-  z-index: 2;
-  width: 100%;
-  padding: 0 20px;
-  box-sizing: border-box;
 
-  // Remove absolute positioning and adjust top based on firstSubmit state
-  margin-top: ${({ firstSubmit }) => (firstSubmit ? '0' : '100px')};  // Adjust margin-top for spacing above SearchContainer
-
-  @media (min-width: 768px) {
-    margin-top: ${({ firstSubmit }) => (firstSubmit ? '0' : '150px')};  // More space for medium screens
-  }
-
-  @media (min-width: 1024px) {
-    font-size: 50px;  // Larger font for big screens
-    margin-top: ${({ firstSubmit }) => (firstSubmit ? '0' : '200px')};  // More space for large screens
-  }
-
-  @media (max-width: 480px) {
-    font-size: 24px;
-    margin-top: ${({ firstSubmit }) => (firstSubmit ? '0' : '60px')};
-  }
-`;
 
 export const Container = styled.div`
   background-color: #1f1f1f;

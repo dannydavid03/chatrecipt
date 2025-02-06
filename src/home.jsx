@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import {
   Container,
-  WelcomeMessage,
   SearchContainer,
   SearchInput,
   SearchButton,
@@ -87,11 +86,6 @@ const HomeComponent = ({ onLogout }) => {
         <NavbarTitle>Chat ReciPT</NavbarTitle>
         <LogoutButton onClick={handleLogout}>Logout</LogoutButton> {/* Trigger logout */}
       </Navbar>
-
-      <WelcomeMessage firstSubmit={firstSubmit}>
-        Welcome to Chat ReciPT
-      </WelcomeMessage>
-
       <SearchContainer firstSubmit={firstSubmit}>
         <SearchInput
           value={inputValue}
