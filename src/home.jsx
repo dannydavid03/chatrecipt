@@ -55,7 +55,7 @@ const HomeComponent = ({ onLogout }) => {
         } else {
           setMessages((prevMessages) => [
             ...prevMessages,
-            { userMessage: false, text: "Error generating response." },
+            { userMessage: false, text: "Error generating response :( Please try again" },
           ]);
         }
       } catch (error) {
@@ -90,7 +90,7 @@ const HomeComponent = ({ onLogout }) => {
         <SearchInput
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Enter ingredients To begin..."
+          placeholder="Enter ingredients To Start..."
         />
         <SearchButton onClick={handleSubmitIngredients}>
           {loading ? "..." : "→"}
