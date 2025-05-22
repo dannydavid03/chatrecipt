@@ -5,11 +5,18 @@ const genAI = new GoogleGenerativeAI(process.env.YOUR_API_KEY);
 
 // Function to generate an AI response based on the prompt
 async function generateAIResponse(prompt) {
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "models/gemini-pro" });
     const fullPrompt = `Give a recipe with ingredients: ${prompt}`;
 
     try {
-        const result = await model.generateContent(fullPrompt);
+        const result = await model.generateContent({
+            contents: [
+              {
+                role: "user",
+                parts: [{ text: fullPrompt }],
+              },
+            ],
+          });
         const response = await result.response;
 
         // Format the response to make it more readable        
