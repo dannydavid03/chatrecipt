@@ -5,7 +5,7 @@ const genAI = new GoogleGenerativeAI(process.env.YOUR_API_KEY);
 
 // Function to generate an AI response based on the prompt
 async function generateAIResponse(prompt) {
-    const model = genAI.getGenerativeModel({ model: "models/gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest"});
     const fullPrompt = `Give a recipe with ingredients: ${prompt}`;
 
     try {
